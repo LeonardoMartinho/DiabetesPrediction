@@ -44,7 +44,7 @@ O presente projeto tem como finalidade desenvolver um **modelo preditivo** robus
 📌 **Descrição:** Heatmap de correlação destacando variáveis como `blood_glucose_level` e `HbA1c_level` como as mais relacionadas ao diabetes.  
 📌 **Insight:** Glicemia elevada e níveis de HbA1c acima de 6.5 são indicadores críticos.  
 
-![Heatmap de Correlação](https://github.com/user-attachments/assets/7a50c69d-eec3-4fb1-95c2-b80aa5f3f1c2)  
+![Heatmap de Correlação](https://github.com/user-attachments/assets/ae36074a-5d4d-4bf9-885e-2f02ebb3e44f)  
 
 **Padrões Identificados**:  
 - 🔴 **Glicemia > 200 mg/dL**: Associada a 85% dos casos positivos.  
@@ -57,7 +57,7 @@ O presente projeto tem como finalidade desenvolver um **modelo preditivo** robus
 📌 **Descrição:** Gráfico de dispersão interativo com cores diferenciando diagnósticos positivos (1) e negativos (0).  
 📌 **Insight:** Pacientes com diabetes tendem a se agrupar na região superior direita (glicemia e HbA1c elevados).  
 
-![Scatter Plot Interativo](https://github.com/user-attachments/assets/0ac920b6-c8fe-4673-95dc-9f237b683d39)
+![Scatter Plot Interativo](https://github.com/user-attachments/assets/a94955f3-cf29-49a1-afa8-1c0169d44cf9)
 
 ---
 
