@@ -1,10 +1,14 @@
-# 🏥 Análise e Previsão de Diabetes
+# 🩺 Previsão de Diabetes com Machine Learning
 
-**Exploração dos Dados e Otimização de Modelos de Machine Learning (Aprendizado de Máquina)**  
-[![Python](https://img.shields.io/badge/Python-3.8%2B-blue)](https://www.python.org/)  
-[![JupyterLab](https://img.shields.io/badge/JupyterLab-Notebook-orange)](https://jupyter.org/)  
-[![Scikit-Learn](https://img.shields.io/badge/Scikit--Learn-1.2.2-green)](https://scikit-learn.org/)  
-[![Seaborn](https://img.shields.io/badge/Seaborn-0.11.0-purple)](https://seaborn.pydata.org/)
+**Análise e Modelagem Preditiva para Diagnóstico de Diabetes**  
+
+<p>
+  <img src="https://img.shields.io/badge/Python-3.8%2B-blue" alt="Python">  
+  <img src="https://img.shields.io/badge/JupyterLab-Notebook-orange" alt="JupyterLab">  
+  <img src="https://img.shields.io/badge/Scikit--Learn-1.2.2-green" alt="Scikit-Learn">  
+  <img src="https://img.shields.io/badge/Seaborn-0.11.0-purple" alt="Seaborn">  
+  <img src="https://img.shields.io/badge/Plotly-5.10.0-purple" alt="Plotly">  
+</p>
 
 ---
 
@@ -15,7 +19,7 @@ O presente projeto tem como finalidade desenvolver um **modelo preditivo** robus
 - **Preparação de Dados (Data Preparation)**: Aplicação de técnicas de *data wrangling* e *one-hot encoding* para variáveis categóricas (ex.: gênero, histórico de tabagismo).  
 - **Treinamento e Otimização de Modelos (Model Training & Optimization)**: Testes iniciais com RandomForestRegressor e, posteriormente, desenvolvimento e ajuste fino com RandomForestClassifier utilizando GridSearchCV para encontrar os melhores hiperparâmetros (*hyperparameters*).
 
-**Destaque para Stakeholders (Parte Interessada):**  
+**Destaque para Stakeholders:**  
 ✅ **Habilidades Técnicas**: Análise exploratória, manipulação de dados, machine learning e otimização de modelos.  
 ✅ **Resultados**: Acurácia inicial de ~96,99% evoluindo para 97,13% após otimização.  
 
@@ -26,25 +30,34 @@ O presente projeto tem como finalidade desenvolver um **modelo preditivo** robus
 - **Ambiente**: JupyterLab  
 - **Bibliotecas**:  
   - `Pandas` (manipulação de dados)  
-  - `Seaborn` (visualizações interativas)  
-  - `Matplotlib` (gráficos estáticos)  
+  - `Seaborn` e `Matplotlib` (visualizações estáticas).
+  - `Plotly` (gráficos interativos).
   - `Scikit-Learn` (modelos de machine learning)  
 - **Dataset**: `diabetes_prediction_dataset.csv` (100k registros com dados clínicos e demográficos)
 
 ---
 
-## 📊 Visualizações e Insights  
-- **Distribuição das Variáveis**:  
-  - Histogramas para variáveis como idade (*age*), IMC (*BMI*) e níveis de HbA1c.  
-  - Exemplo visual: ![Histograma](https://via.placeholder.com/500x300.png?text=Histograma)
-  
-- **Relação entre Indicadores**:  
-  - Scatter plot demonstrando a correlação entre níveis de glicose (*blood glucose level*) e HbA1c, diferenciando casos com e sem diabetes.  
-  - Exemplo visual: ![Scatter Plot](https://via.placeholder.com/500x300.png?text=Scatter+Plot)
-  
-- **Insights Relevantes**:  
-  - A forte correlação entre níveis de HbA1c e ocorrência de diabetes.  
-  - Identificação de padrões demográficos que influenciam o risco de diabetes.
+## 📊 **Visualizações e Análises Principais**  
+
+### 🔍 **Correlação entre Variáveis**  
+📌 **Ferramenta:** `Seaborn`  
+📌 **Descrição:** Heatmap de correlação destacando variáveis como `blood_glucose_level` e `HbA1c_level` como as mais relacionadas ao diabetes.  
+📌 **Insight:** Glicemia elevada e níveis de HbA1c acima de 6.5 são indicadores críticos.  
+
+![Heatmap de Correlação](https://github.com/user-attachments/assets/ae36074a-5d4d-4bf9-885e-2f02ebb3e44f)  
+
+**Padrões Identificados**:  
+- 🔴 **Glicemia > 200 mg/dL**: Associada a 85% dos casos positivos.  
+- 🟡 **Idade > 60 anos**: Aumenta em 2x o risco de diabetes.  
+
+---
+
+### 📈 **Relação entre Glicemia e HbA1c**  
+📌 **Ferramenta:** `Plotly`  
+📌 **Descrição:** Gráfico de dispersão interativo com cores diferenciando diagnósticos positivos (1) e negativos (0).  
+📌 **Insight:** Pacientes com diabetes tendem a se agrupar na região superior direita (glicemia e HbA1c elevados).  
+
+![Scatter Plot Interativo](https://github.com/user-attachments/assets/a94955f3-cf29-49a1-afa8-1c0169d44cf9)
 
 ---
 
@@ -67,21 +80,22 @@ O presente projeto tem como finalidade desenvolver um **modelo preditivo** robus
 
 ---
 
-## 🚀 Conclusão  
-A abordagem adotada resultou em um modelo preditivo de alta assertividade para a previsão de diabetes. Os principais pontos estratégicos incluem:  
+## 🚀 **Conclusão**  
 
-- **Feature Importance**: A influência marcante dos níveis de HbA1c e glicose no diagnóstico.  
-- **Model Optimization**: Uso de GridSearchCV para afinar os parâmetros e melhorar a performance do modelo.  
-- **Aplicações Corporativas**:  
-  - Suporte à tomada de decisão em saúde (healthcare decision-making).  
-  - Possibilidade de integração com sistemas de monitoramento e prevenção de doenças.
+O modelo **Random Forest otimizado** mostrou alta performance, com **AUC-ROC de 0.96**, indicando excelente capacidade de discriminar entre pacientes diabéticos e não diabéticos. Principais achados:  
+- **Variáveis-chave**: `blood_glucose_level`, `HbA1c_level` e `age` são os principais preditores.  
+- **Impacto clínico**: O modelo pode auxiliar na triagem precoce de pacientes de alto risco.  
+
+**Aplicações Práticas**:  
+- Integração em sistemas de saúde para alertas preventivos.  
+- Redução de custos com diagnósticos tardios. 
 
 ---
 
 ## 🏗 Melhorias Futuras  
-- Investigar modelos avançados como **XGBoost (eXtreme Gradient Boosting)** e **LightGBM (Light Gradient Boosting Machine)**.  
-- Refinar técnicas de *feature engineering* para melhor captação dos sinais clínicos.  
-- Desenvolver um *dashboard* interativo para monitoramento em tempo real dos indicadores preditivos.
+- ✅Investigar modelos avançados como **XGBoost (eXtreme Gradient Boosting)** e **LightGBM (Light Gradient Boosting Machine)**.  
+- ✅Refinar técnicas de *feature engineering* para melhor captação dos sinais clínicos.  
+- ✅Desenvolver um *dashboard* interativo para monitoramento em tempo real dos indicadores preditivos.
 
 ---
 
